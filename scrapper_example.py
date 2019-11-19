@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup
 import os
 from time import sleep
 import random
-from random import randint
 
 default_name_for_file = "agents.txt"
 counter = 0
@@ -53,7 +52,7 @@ else:
     print(my_session.headers)
 
     while True:
-        if counter == randint(50, 150):
+        if counter == random.randint(50, 150):
             user_agent = file_open(default_name_for_file)
             print("")
             print("[INFO] Changing User-Agent")
@@ -64,7 +63,7 @@ else:
             print("")
             print("[INFO] Changing IP")
             os.system("torghost switch")
-            sleep(randint(15, 20))
+            sleep(random.randint(15, 20))
             counter = 0
 
         scrapped_page = scrapper(url)
